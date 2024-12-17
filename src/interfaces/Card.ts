@@ -5,19 +5,19 @@ export type Card = {
     description: string;
     phone: string;
     email: string
-    web: string;
+    web?: string;
     image: {
-        url: string;
-        alt: string;
+        url?: string;
+        alt?: string;
         _id: string;
     }
     address: {
-        state: string;
+        state?: string;
         country: string;
         city: string;
         street: string;
         houseNumber: number;
-        zip: number;
+        zip?: number;
         _id: string;
     }
     bizNumber: number;
