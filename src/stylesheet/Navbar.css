@@ -1,0 +1,19 @@
+#navbar {
+    position: fixed;
+    width: 100%;
+}
+
+#btns button {
+    margin: 3px;
+}
+
+img {
+    height: 21px;
+    width: 21px;
+}
+
+#footer {
+    position: relative;
+    text-align: center;
+    background-color: #0DCAF0;
+}
