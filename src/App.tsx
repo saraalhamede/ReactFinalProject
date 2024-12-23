@@ -5,15 +5,15 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-rou
 import Cards from './components/Cards';
 function App() {
   return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route />
+      </Routes>
 
-    <Cards />
+    </BrowserRouter>
   );
 }
 
 export default App;
-{/*  <BrowserRouter>
-        <Routes>
-          <Route />
-        </Routes>
 
-      </BrowserRouter> */}
