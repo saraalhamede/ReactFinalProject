@@ -2,6 +2,8 @@ import { FunctionComponent } from "react";
 import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import { FormikValues, useFormik } from "formik";
 import * as yup from "yup";
+import { checkUser } from "../services/usersServices";
+import { errorMsg } from "../services/feedbackesServices";
 interface LoginProps {
 
 }
@@ -15,11 +17,25 @@ const Login: FunctionComponent<LoginProps> = () => {
             password: yup.string().required().min(8),
         }),
         onSubmit: (values) => {
+            checkUser(values)
+                .then((res) => {
+                    if (res.data.length) {
+                        navigate("/home");
+                        localStorage.setItem("userId", JSON.stringify(res.data[0].id));
+                    } else {
+                        alert("No such user");
+                    }
+                })
+                .catch((err) => {
+                    errorMsg("filed to connected")
+                    console.log(err)
 
+                }
+                );
         },
     });
     return (
-        <div className="container w-100 m-100">
+        <div className="container w-50 m-100">
             <h5 className="display-5 my-2" style={{ textAlign: "center" }}>LOGIN</h5>
             <form onSubmit={formik.handleSubmit}>
                 <div className="form-floating mb-3">

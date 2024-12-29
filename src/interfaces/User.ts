@@ -1,17 +1,17 @@
-export interface User {
-    name: {
+export type User = {
+    name?: {
         first: string;
         middle?: string;
         last: string;
     }
-    phone: string;
+    phone?: string;
     email: string;
     password: string;
     image?: {
         url: string;
         alt: string;
     }
-    address: {
+    address?: {
         state?: string;
         country: string;
         city: string;
@@ -19,5 +19,5 @@ export interface User {
         houseNumber: number;
         zip: number;
     }
-    isBusiness: boolean;
-}
+    isBusiness?: boolean;
+} | null;

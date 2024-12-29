@@ -1,13 +1,15 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../stylesheet/Navbar.css"
 import darkMood from '../assesrt/moon.png';
+import { User } from "../interfaces/User";
 interface NavbarProps {
 
 }
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
     const navigate = useNavigate();
+    const [user, setUser] = useState<User>(null);
     return (<>
         <nav
             id="navbar"
