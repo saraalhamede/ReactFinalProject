@@ -3,9 +3,15 @@ import { Card } from "../interfaces/Card";
 
 const api: string = `${process.env.REACT_APP_API}/cards`;
 
-export function getAllProducts() {
+export function getAllCards() {
     return axios.get(api);
 }
+export async function cards() {
+    let response = await getAllCards()
+    let cards = await response.data
+    return cards;
+}
+let de = cards();
 
 export function getCardById(id: string) {
     return axios.get(`${api}/${id}`);
