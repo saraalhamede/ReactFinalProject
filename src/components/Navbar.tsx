@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../stylesheet/Navbar.css"
 import darkMood from '../assesrt/moon.png';
 interface NavbarProps {
@@ -7,6 +7,7 @@ interface NavbarProps {
 }
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
+    const navigate = useNavigate();
     return (<>
         <nav
             id="navbar"
@@ -42,8 +43,9 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
                     <div id="btns" >
                         <button type="button" className="btn btn-light"><img src={darkMood} alt="dark mood" /></button>
 
-                        <button type="button" className="btn btn-light">SINGUP</button>
-                        <button type="button" className="btn btn-light">LOGIN</button>
+                        <button type="button" className="btn btn-light" onClick={() => navigate("/Register")}>SINGUP</button>
+                        <button type="button" className="btn btn-light" onClick={() => navigate("/Login")
+                        } >LOGIN</button>
                     </div>
                 </div>
             </div>
